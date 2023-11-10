@@ -12,7 +12,17 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <!-- 默认主题 -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
+    <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css"> -->
+
+    <!-- Theme: Simple -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
+
+    <!-- Theme: Simple (light + dark) -->
+    <link rel="stylesheet" media="(prefers-color-scheme: light)" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
+    <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">
+
+
+
 </head>
 
 <body>
@@ -50,11 +60,37 @@
                 depth: 4,
                 hideOtherSidebarContent: false,
                 namespace: 'Docsify-Guide',
+            },
+
+            tabs: {
+                persist    : true,      // default
+                sync       : true,      // default
+                theme      : 'classic', // default
+                tabComments: true,      // default
+                tabHeadings: true       // default
+            },
+            pagination: {
+                previousText: '上一章节',
+                // or
+                nextText: {
+                '/en/': 'NEXT',
+                '/': '下一章节'
+                },
+                crossChapter: true,
+                crossChapterText: true,
+            },
+            themeable: {
+                readyTransition : true, // default
+                responsiveTables: true  // default
             }
         }
     </script>
     <!-- docsify的js依赖 -->
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+
+    <!-- docsify-themeable -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script> -->
+
     <!-- emoji表情支持 -->
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
     <!-- 图片放大缩小支持 -->
@@ -63,6 +99,27 @@
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
     <!--在所有的代码块上添加一个简单的Click to copy按钮来允许用户从你的文档中轻易地复制代码-->
     <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+
+    <!-- 代码高亮，内置之外添加支持的语言 -->
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-sql.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
+
+    <!-- docsify-tabs (latest v1.x.x) -->
+    <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+
+    <!-- Pagination -->
+    <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+
+    <style>
+        :root {
+          /* --theme-hue: 790; */
+          --base-font-size: 19px;
+          /* --theme-color   : rgb(4, 161, 164); */
+          font-family: 'LXGW Wenkai'
+        }
+      </style>
+
 </body>
 
 </html>
